@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maryam Mohamdi - Portfolio</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <nav class="barre-navigation" aria-label="Navigation principale">
+      <a href="index.html" class="logo">Maryam Mohamdi</a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="menu">
+        ☰
+      </button>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html" aria-current="page">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="photographie.html">Photographie</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section id="accueil" class="section-accueil" aria-labelledby="titre-accueil">
+      <div class="texte-accueil">
+        <h1 id="titre-accueil">Maryam Mohamdi</h1>
+
+        <p class="accroche">
+          Bientôt diplômée d’un Master MIASHS Technologie et Handicap
+        </p>
+
+        <p>
+          Mon objectif est de créer des expériences numériques inclusives et accessibles,
+          où la facilité d’utilisation, l’accessibilité universelle et la réactivité se combinent
+          pour offrir un parcours utilisateur fluide à chacun.
+        </p>
+
+        <a
+          href="cv/cv-mohamdi-maryam.pdf"
+          class="btn-cv"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Voir le CV de Maryam Mohamdi au format PDF, s’ouvre dans un nouvel onglet">
+          Voir mon CV
+        </a>
+      </div>
+
+      <div class="image-accueil">
+        <img src="images/intro.png" alt="Portrait de Maryam Mohamdi">
+      </div>
+    </section>
+
+    <section class="section-interets" aria-labelledby="titre-interets">
+      <h2 id="titre-interets">Centres d’intérêt</h2>
+
+      <div class="cartes-interets">
+        <article class="carte">
+          <h3>Accessibilité</h3>
+          <p>
+            Concevoir des interfaces inclusives permettant à toutes les personnes,
+            y compris celles en situation de handicap, de comprendre, naviguer
+            et utiliser les services numériques sans obstacle.
+          </p>
+        </article>
+
+        <article class="carte">
+          <h3>NLP</h3>
+          <p>
+            Le traitement automatique du langage aide les machines à analyser,
+            comprendre et produire le langage humain de manière intelligente.
+          </p>
+        </article>
+
+        <article class="carte">
+          <h3>Aides techniques</h3>
+          <p>
+            Passionnée par les technologies inclusives, je m'intéresse aux aides techniques, à la robotique, à l'électronique et aux solutions numériques permettant d'améliorer l'autonomie des personnes en situation de handicap. J'aime concevoir et développer des outils innovants ayant un impact positif sur le quotidien des utilisateurs 
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-competences" aria-labelledby="titre-competences">
+      <h2 id="titre-competences">Compétences</h2>
+
+      <h3>Langages</h3>
+      <ul class="logos-competences" aria-label="Langages maîtrisés">
+        <li><img src="logo/logo_html.png" alt="HTML"></li>
+        <li><img src="logo/logo_css.png" alt="CSS"></li>
+        <li><img src="logo/logo_java.svg" alt="JavaScript"></li>
+        <li><img src="logo/logo_python.png" alt="Python"></li>
+        <li><img src="logo/logo_php.png" alt="PHP"></li>
+        <li><img src="logo/logo_sql.webp" alt="SQL"></li>
+      </ul>
+
+      <h3>Logiciels</h3>
+      <ul class="logos-competences" aria-label="Logiciels utilisés">
+        <li><img src="logo/logo_vscode.png" alt="Visual Studio Code"></li>
+        <li><img src="logo/logo_androidstudio.png" alt="Android Studio"></li>
+        <li><img src="logo/logo_mu.png" alt="Mu Editor"></li>
+        <li><img src="logo/logo_arduino.png" alt="Arduino IDE"></li>
+        <li><img src="logo/logo_eclipse.png" alt="Eclipse IDE"></li>
+      </ul>
+    </section>
+  </main>
+
+  <button id="btnTop" class="btn-top" type="button" aria-label="Remonter en haut de la page">
+    ↑
+  </button>
+
+  <script>
+    const btnTop = document.getElementById("btnTop");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    btnTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+      btnTop.classList.toggle("visible", window.scrollY > 300);
+    });
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("show");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+    });
+  </script>
+</body>
+</html>
