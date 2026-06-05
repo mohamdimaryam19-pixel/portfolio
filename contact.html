@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maryam Mohamdi - Contact</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <nav class="barre-navigation" aria-label="Navigation principale">
+      <a href="index.html" class="logo">Maryam Mohamdi</a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="menu">
+        ☰
+      </button>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="photographie.html">Photographie</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
+    <section class="section-contact" aria-labelledby="titre-contact">
+      <div class="intro-contact">
+        <h1 id="titre-contact">Contact</h1>
+        <p>
+          Vous pouvez me contacter pour échanger autour d’un projet, d’une collaboration
+          ou d’une opportunité professionnelle.
+        </p>
+      </div>
+
+      <div class="contact-layout">
+        <section class="contact-card" aria-labelledby="infos-contact">
+          <h2 id="infos-contact">Mes informations</h2>
+
+          <ul class="liste-contact">
+            <li>
+              <strong>Email</strong>
+              <a href="mailto:mohamdimaryam19@gmail.com">mohamdimaryam19@gmail.com</a>
+            </li>
+
+            <li>
+              <strong>LinkedIn :</strong>
+                <a
+                  href="https://www.linkedin.com/in/maryam-mohamdi-b3bb43302"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  linkedin.com/in/maryam-mohamdi-b3bb43302
+                </a>
+              </li>
+
+            <li>
+              <strong>Localisation</strong>
+              <span>Île-de-France, France</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="contact-card" aria-labelledby="formulaire-contact">
+          <h2 id="formulaire-contact">Envoyer un message</h2>
+
+          <form action="#" method="post">
+            <div class="champ-formulaire">
+              <label for="nom">Nom <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                autocomplete="name"
+                required>
+            </div>
+
+            <div class="champ-formulaire">
+              <label for="email">Adresse e-mail <span aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required>
+            </div>
+
+            <div class="champ-formulaire">
+              <label for="sujet">Sujet</label>
+              <input
+                type="text"
+                id="sujet"
+                name="sujet">
+            </div>
+
+            <div class="champ-formulaire">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required></textarea>
+            </div>
+
+            <p class="indication-formulaire">
+              Les champs marqués d’un astérisque sont obligatoires.
+            </p>
+
+            <button type="submit" class="btn-cv">
+              Envoyer le message
+            </button>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <button id="btnTop" class="btn-top" type="button" aria-label="Remonter en haut de la page">
+    ↑
+  </button>
+
+  <script>
+    const btnTop = document.getElementById("btnTop");
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    btnTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+      btnTop.classList.toggle("visible", window.scrollY > 300);
+    });
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("show");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+    });
+  </script>
+</body>
+</html>
